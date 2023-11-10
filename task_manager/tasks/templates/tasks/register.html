@@ -1,0 +1,25 @@
+{% extends "tasks/layout.html" %}
+
+{% block content %}
+<div class="register-container">
+    <h2>Register</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="reg" for="id_username">Username:</label>
+            <input type="text" name="username" id="id_username" required autofocus>
+        </div>
+        <div class="form-group">
+            <label class="reg" for="id_password1">Password:</label>
+            <input type="password" name="password1" id="id_password1" required>
+        </div>
+        <div class="form-group">
+            <label class="reg" for="id_password2">Confirm Password:</label>
+            <input type="password" name="password2" id="id_password2" required>
+        </div>
+        <button class="btn-log-reg" type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+{% endblock %}
